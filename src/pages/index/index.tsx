@@ -65,6 +65,20 @@ export default function Index() {
     }
   }
 
+  function handleClickFunction(e) {
+    console.log(e,'e');
+    console.log('点击了按钮');
+  }
+
+  function handleAClick(e) {
+    e.preventDefault() // 阻止原生事件
+  }
+
+  function handleViewClick(aThing, bThing) {
+    console.log(aThing,bThing);
+
+  }
+
   return (
     <>
       {/* 字符串 */}
@@ -175,6 +189,9 @@ export default function Index() {
           isTrue && <View>我是真的233</View>
         }
       </View>
+      <View className='btn' onClick={handleClickFunction} >按钮</View>
+      <a href='https://www.baidu.com' onClick={handleAClick}>这是一个a标签</a>
+      <View onClick={()=>handleViewClick('参数1','参数2')}>事件传参</View>
     </>
   )
 }
