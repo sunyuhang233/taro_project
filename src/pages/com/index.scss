@@ -1,0 +1,49 @@
+.com-warp {
+  height: 400px;
+  width: 400px;
+  border: 10px solid red;
+  &-hover {
+    background-color: red;
+  }
+}
+
+.com-inner-warp {
+  height: 300px;
+  width: 300px;
+  background-color: skyblue;
+  &-hover {
+    background-color: purple;
+  }
+}
+
+.img {
+  height: 80px;
+  width: 80px;
+}
+
+.banner {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.scroll-view {
+  height: 600px;
+}
+.view-item {
+  height: 200px;
+  background-color: royalblue;
+}
+
+.scroll-view-x {
+  width: 100%;
+  height: 500px;
+  white-space: nowrap;
+}
+
+.view-item-x {
+  display: inline-block;
+  width: 400px;
+  height: 200px;
+  background-color: red;
+}
