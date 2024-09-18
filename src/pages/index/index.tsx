@@ -1,13 +1,41 @@
-import { View,Navigator } from '@tarojs/components'
-import { useLoad } from '@tarojs/taro'
+import { View } from '@tarojs/components'
+import { useDidHide, useDidShow, useLoad, useReady, useUnload } from '@tarojs/taro'
 import './index.scss'
+import { useEffect } from 'react'
 
 
 export default function Index() {
 
+  // 1. 页面加载完成时的回调。
   useLoad(() => {
-    console.log('useLoad');
+    console.log('useLoad')
   })
+  // 2. 页面展示时的回调。
+  useDidShow(() => {
+    console.log('useDidShow')
+  })
+  // 3. 页面初次渲染完成的回调。 此时页面已经准备妥当，可以和视图层进行交互。
+  useReady(() => {
+    console.log('useReady')
+  })
+  // 4. 可以使用所有的 React Hooks
+  useEffect(() => {
+    console.log('useEffect')
+  }, [])
+
+
+  // 页面卸载时的回调。
+  useUnload(() => {
+    console.log('useUnload')
+  })
+
+  // 页面隐藏时的回调。
+  useDidHide(() => {
+    console.log('useDidHide')
+  })
+
+
+
 
   // 字符串
   let a = '第一个变量'

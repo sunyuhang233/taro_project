@@ -1,5 +1,5 @@
-import { View, Text, RichText, Icon,Image ,Video,Swiper,SwiperItem,ScrollView, Button} from '@tarojs/components'
-import { useLoad } from '@tarojs/taro'
+import { View, Text, RichText, Icon,Image ,Video,Swiper,SwiperItem,ScrollView, Button,Navigator} from '@tarojs/components'
+import Taro, { useLoad} from '@tarojs/taro'
 import './index.scss'
 import Pic from "../../assets/images/pic.png"
 import empty_cart from "../../assets/images/empty_cart.png"
@@ -11,6 +11,25 @@ export default function Com () {
   useLoad(() => {
     console.log('Page loaded.')
   })
+
+  function handleNavigator1() {
+    // navigateTo
+    Taro.navigateTo({
+      url:"/pages/route/index?id=1&name=张三&sex=男"
+    })
+  }
+  function handleNavigator2() {
+    // redirectTo
+    Taro.redirectTo({
+      url:"/pages/route/index"
+    })
+  }
+  function handleNavigator3() {
+    // switchTab
+    Taro.switchTab({
+      url:"/pages/index/index"
+    })
+  }
 
   return (
     // View
@@ -98,6 +117,27 @@ export default function Com () {
       <Button openType='share'>按钮</Button>
       <Button openType='contact'>按钮</Button>
       <Button openType='openSetting'>按钮</Button>
+
+      {/* Navigator路由跳转
+      url 页面路径
+      openType 跳转方式(navigate redirect switchTab)
+      */}
+      <Navigator url='/pages/route/index?id=100' openType='navigate'>
+      <Text>跳转到route页面</Text>
+      </Navigator>
+
+      <Navigator url='/pages/route/index?id=200&name=hang' openType='redirect'>
+      <Text>跳转到route页面</Text>
+      </Navigator>
+
+
+      <Navigator url='/pages/index/index' openType='switchTab'>
+      <Text>跳转到index页面</Text>
+      </Navigator>
+
+      <Button onClick={handleNavigator1} type='primary'>跳转到route页面</Button>
+      <Button onClick={handleNavigator2} type='warn'>跳转到route页面</Button>
+      <Button onClick={handleNavigator3} type='default'>跳转到index页面</Button>
     </>
   )
 }
