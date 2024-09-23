@@ -1,6 +1,6 @@
 export default defineAppConfig({
   // 全局页面路径
-  pages: ["pages/index/index", "pages/com/index", "pages/route/index"],
+  pages: ["pages/index/index", "pages/com/index", "pages/route/index", "pages/hooks/index"],
   // 全局页面配置
   window: {
     backgroundTextStyle: "light",
