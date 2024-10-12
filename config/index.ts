@@ -1,11 +1,14 @@
 import { defineConfig, type UserConfigExport } from '@tarojs/cli'
-import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import devConfig from './dev'
 import prodConfig from './prod'
+import path from "node:path"
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineConfig<'vite'>(async (merge, { command, mode }) => {
   const baseConfig: UserConfigExport<'vite'> = {
+    alias:{
+      "@":path.resolve(__dirname,"..","src")
+    },
     projectName: 'demo1',
     date: '2024-9-1',
     designWidth: 750,
@@ -17,7 +20,9 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
     },
     sourceRoot: 'src',
     outputRoot: 'dist',
-    plugins: [],
+    plugins: [
+
+    ],
     defineConstants: {
     },
     copy: {

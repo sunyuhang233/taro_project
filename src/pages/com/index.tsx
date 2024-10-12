@@ -1,5 +1,5 @@
-import { View, Text, RichText, Icon,Image ,Video,Swiper,SwiperItem,ScrollView, Button,Navigator} from '@tarojs/components'
-import Taro, { useLoad} from '@tarojs/taro'
+import { View, Text, RichText, Icon, Image, Video, Swiper, SwiperItem, ScrollView, Button, Navigator } from '@tarojs/components'
+import Taro, { useLoad } from '@tarojs/taro'
 import './index.scss'
 import Pic from "../../assets/images/pic.png"
 import empty_cart from "../../assets/images/empty_cart.png"
@@ -7,29 +7,30 @@ import Banner01 from "../../assets/images/banner/banner01.jpeg"
 import Banner02 from "../../assets/images/banner/banner02.jpeg"
 import Banner03 from "../../assets/images/banner/banner03.jpeg"
 
-export default function Com () {
+export default function Com() {
   useLoad(() => {
     console.log('Page loaded.')
   })
+  // function handleNavigator1() {
+  //   // navigateTo
+  //   Taro.navigateTo({
+  //     url:"/pages/route/index?id=1&name=张三&sex=男"
+  //   })
+  // }
+  // function handleNavigator2() {
+  //   // redirectTo
+  //   Taro.redirectTo({
+  //     url:"/pages/route/index"
+  //   })
+  // }
+  // function handleNavigator3() {
+  //   // switchTab
+  //   Taro.switchTab({
+  //     url:"/pages/index/index"
+  //   })
+  // }
 
-  function handleNavigator1() {
-    // navigateTo
-    Taro.navigateTo({
-      url:"/pages/route/index?id=1&name=张三&sex=男"
-    })
-  }
-  function handleNavigator2() {
-    // redirectTo
-    Taro.redirectTo({
-      url:"/pages/route/index"
-    })
-  }
-  function handleNavigator3() {
-    // switchTab
-    Taro.switchTab({
-      url:"/pages/index/index"
-    })
-  }
+
 
   return (
     // View
@@ -46,12 +47,12 @@ export default function Com () {
     // <Icon size={80} type='success' color='#000000' />
     // </>
     <>
-    {/* <Image src='https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png'  className='img' />
+      {/* <Image src='https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png'  className='img' />
     <Image src={Pic} />
     <Image src={empty_cart} className='img' /> */}
 
 
-        {/* <Image src={Pic} />
+      {/* <Image src={Pic} />
         <Image src={Pic} mode='heightFix' />
         <Image src={Pic} mode='widthFix' />
         <Image src={Pic} mode='aspectFill' />
@@ -61,7 +62,7 @@ export default function Com () {
         <Image src={Pic} mode='bottom' /> */}
 
 
-         {/* <Video
+      {/* <Video
            id='video'
            src='https://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400'
            poster='https://misc.aotu.io/booxood/mobile-video/cover_900x500.jpg'
@@ -106,7 +107,7 @@ export default function Com () {
         <View className='view-item-x'>7</View>
         <View className='view-item-x'>8</View>
       </ScrollView> */}
-      <Button type='default'>按钮</Button>
+      {/* <Button type='default'>按钮</Button>
       <Button type='primary'>按钮</Button>
       <Button type='warn'>按钮</Button>
       <Button size='mini'>按钮</Button>
@@ -116,13 +117,13 @@ export default function Com () {
       <Button loading>按钮</Button>
       <Button openType='share'>按钮</Button>
       <Button openType='contact'>按钮</Button>
-      <Button openType='openSetting'>按钮</Button>
+      <Button openType='openSetting'>按钮</Button> */}
 
       {/* Navigator路由跳转
       url 页面路径
       openType 跳转方式(navigate redirect switchTab)
       */}
-      <Navigator url='/pages/route/index?id=100' openType='navigate'>
+      {/* <Navigator url='/pages/route/index?id=100' openType='navigate'>
       <Text>跳转到route页面</Text>
       </Navigator>
 
@@ -137,7 +138,7 @@ export default function Com () {
 
       <Button onClick={handleNavigator1} type='primary'>跳转到route页面</Button>
       <Button onClick={handleNavigator2} type='warn'>跳转到route页面</Button>
-      <Button onClick={handleNavigator3} type='default'>跳转到index页面</Button>
+      <Button onClick={handleNavigator3} type='default'>跳转到index页面</Button> */}
     </>
   )
 }
