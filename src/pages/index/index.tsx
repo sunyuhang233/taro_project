@@ -1,4 +1,4 @@
-import { View } from '@tarojs/components'
+import { Navigator, View } from '@tarojs/components'
 import { useDidHide, useDidShow, useLoad, useReady, useUnload } from '@tarojs/taro'
 import './index.scss'
 import { useEffect } from 'react'
@@ -220,6 +220,7 @@ export default function Index() {
       <View className='btn' onClick={handleClickFunction} >按钮</View>
       <a href='https://www.baidu.com' onClick={handleAClick}>这是一个a标签</a>
       <View onClick={()=>handleViewClick('参数1','参数2')}>事件传参</View>
+      <Navigator url='/pages/hooks/index'>跳转页面</Navigator>
     </>
   )
 }

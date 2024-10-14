@@ -21,7 +21,6 @@ export default defineConfig<'vite'>(async (merge, { command, mode }) => {
     sourceRoot: 'src',
     outputRoot: 'dist',
     plugins: [
-
     ],
     defineConstants: {
     },

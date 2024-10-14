@@ -1,5 +1,6 @@
 import { View, Image } from '@tarojs/components'
 import './index.scss'
+import React from 'react'
 
 interface CardProps{
   // ?叫做可选类型
@@ -7,16 +8,25 @@ interface CardProps{
   content?:any
   confirmBtn?:string
   cancelBtn?:string
-  changeName:()=>void
+  changeName?:(name:string)=>void
+  children?:React.ReactNode
+  img?:string
 }
 
 
 //  1.父组件传值给子组件
-export default function Card({title,content,confirmBtn,cancelBtn,changeName}:CardProps) {
+export default function Card({title,content,confirmBtn,cancelBtn,changeName,children,img}:CardProps) {
   return (
     <View className='card'>
       <View className='header'>
-        <Image className='img' src='https://v4.mui.com/static/images/cards/contemplative-reptile.jpg' mode='widthFix'></Image>
+        {/* 如果有传子元素 就优先展示子元素 其次是默认元素 */}
+        {
+          children ? children :  <Image className='img' src={
+            img || 'https://v4.mui.com/static/images/cards/contemplative-reptile.jpg'
+          } mode='widthFix'
+          ></Image>
+        }
+
       </View>
       <View className='main'>
         <View className='title'>
@@ -28,7 +38,7 @@ export default function Card({title,content,confirmBtn,cancelBtn,changeName}:Car
         </View>
       </View>
       <View className='footer'>
-        <View className='btn-action' onClick={()=>changeName()}>
+        <View className='btn-action' onClick={()=>changeName('李四')}>
           {confirmBtn || '确定'}
         </View>
         <View className='btn-action'>
